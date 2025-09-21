@@ -153,7 +153,6 @@ function renderRecipes(filterCategory, searchTerm) {
     // Build inner content step by step
     var img = document.createElement("img");
     img.src = r.image;
-    img.alt = r.title;
 
     var h3 = document.createElement("h3");
     h3.textContent = r.title;
