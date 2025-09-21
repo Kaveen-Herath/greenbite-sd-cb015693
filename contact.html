@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assests/images/favicon.ico" type="image/x-icon">
+  <title>GreenBite</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+<link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+
+</head>
+<body>
+
+<!-- ======================= Navbar ======================= -->
+
+  <header id="main-header">
+    <nav class="navbar">
+      <img src="/assests/images/logo.webp" alt="GreenBite Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Healthy Recipes</a></li>
+        <li><a href="calculator.html">Nutrition Calculator</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="mindfulness.html">Mindfulness</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- ======================= Main Content ======================= -->
+
+<video autoplay loop muted playsinline class="workout-video">
+    <source src="/assests/videos/recipebg(1).mp4" type="video/mp4">
+</video>
+
+<div class="contact-container">
+    <div class="contact-main">
+        <h2>Contact & Feedback</h2>
+
+        <!-- Contact Form -->
+        <form class="contact-form" id="contactForm">
+        <label for="contactName">Name:</label>
+        <input type="text" id="contactName" required>
+
+        <label for="contactEmail">Email:</label>
+        <input type="email" id="contactEmail" required>
+
+        <label for="contactMessage">Message:</label>
+        <textarea id="contactMessage" rows="4" required></textarea>
+
+        <button type="submit" class="common-btn">Submit</button>
+        </form>
+
+    <p class="contact-confirm" id="contactConfirm">Thank you! Your feedback has been submitted.</p>
+    </div>
+
+<br><br>
+    <!-- Map -->
+    <div class="map-container">
+        <div class="contact-map">
+        <h3>Find Us at GreenBite HQ</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d1046.3203754340498!2d26.683411744099416!3d58.365730164851065!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x46eb370e40377dd3%3A0xc1a02b13e955beed!2sGreen%20Bite%2C%20Palsami%20tn%2C%2050411%20Tartu%2C%20Estonia!3m2!1d58.3657999!2d26.6838667!5e0!3m2!1sen!2slk!4v1758451524934!5m2!1sen!2slk"
+        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="contact-faq">
+        <h3>Frequently Asked Questions</h3>
+
+        <div class="contact-faq-item">
+            <div class="contact-faq-question">What is GreenBite?</div>
+            <div class="contact-faq-answer">GreenBite is a health and wellness platform that helps people eat better, exercise smarter, and practice mindfulness. It offers healthy recipes, workout routines, meditation tools, and a nutrition calculator to support a balanced lifestyle.</div>
+        </div>
+
+        <div class="contact-faq-item">
+            <div class="contact-faq-question">How do I submit feedback?</div>
+            <div class="contact-faq-answer">You can use the form above to send us feedback. All submissions are stored securely.</div>
+        </div>
+
+        <div class="contact-faq-item">
+            <div class="contact-faq-question">Where is GreenBite HQ located?</div>
+            <div class="contact-faq-answer">We are based in Palsami, located northeast of Tartu, Estonia. See the map above for directions.</div>
+        </div>
+        </div>
+    </div>
+  </div>
+
+
+  <!-- ======================= Footer ======================= -->
+
+  <footer>
+  <div class="footer-social">
+    <a href="https://facebook.com" target="_blank"><img src="/assests/images/facebook.webp" alt="Facebook"></a>
+    <a href="https://instagram.com" target="_blank"><img src="/assests/images/instagram.webp" alt="Instagram"></a>
+    <a href="https://twitter.com" target="_blank"><img src="/assests/images/twitter.webp" alt="Twitter"></a>
+    <a href="https://tiktok.com" target="_blank"><img src="/assests/images/tiktok.webp" alt="Tiktok"></a>
+    <a href="https://youtube.com" target="_blank"><img src="/assests/images/youtube.webp" alt="Youtube"></a>
+    <a href="https://linkedin.com" target="_blank"><img src="/assests/images/linkedin.webp" alt="LinkedIn"></a>
+  </div>
+
+  <div class="footer-nav">
+    <p class="footer-text">&copy; 2025 GreenBite. Healthy lifestyle, one bite at a time.</p>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Healthy Recipes</a></li>
+      <li><a href="calculator.html">Nutrition Calculator</a></li>
+      <li><a href="workouts.html">Workouts</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/contact.js"></script>
+</body>
+</html>

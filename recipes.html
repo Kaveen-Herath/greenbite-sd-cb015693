@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assests/images/favicon.ico" type="image/x-icon">
+  <title>GreenBite</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+
+</head>
+<body>
+
+<!-- ======================= Navbar ======================= -->
+
+  <header id="main-header">
+    <nav class="navbar">
+      <img src="/assests/images/logo.webp" alt="GreenBite Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html" class="active">Healthy Recipes</a></li>
+        <li><a href="calculator.html">Nutrition Calculator</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="mindfulness.html">Mindfulness</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- ======================= Main Content ======================= -->
+
+  <video autoplay loop muted playsinline class="recipe-video">
+      <source src="/assests/videos/recipebg(1).mp4" type="video/mp4">
+  </video>
+
+  <main class="recipe-main">
+    <section class="recipes-section">
+      <h1>Healthy Recipes</h1>
+
+      <!-- Filter/Search -->
+      <div class="filters">
+        <input type="text" id="searchInput" placeholder="Search by name...">
+        <select id="categoryFilter">
+          <option value="All">All Categories</option>
+        </select>
+      </div>
+
+      <!-- Recipes Container -->
+      <div class="recipes-container" id="recipesContainer">
+        <!-- Recipe cards will be inserted here dynamically -->
+      </div>  
+    </section>
+  </main>
+
+  <!-- ======================= Recipe Model ======================= -->
+
+  <div class="recipemodal" id="recipeModal">
+    <div class="recipemodal-content">
+      <span class="close">&times;</span>
+      <h3 id="modalTitle">Recipe Title</h3>
+      <img id="modalImage" src="/assests/images/placeholder.webp" alt="Recipe Image">
+      <h4>Ingredients</h4>
+      <ul id="modalIngredients"></ul>
+      <h4>Steps</h4>
+      <ol id="modalSteps"></ol>
+      <h4>Nutrition Info</h4>
+      <table id="modalNutrition">
+        <tr><th>Calories</th><td id="nutrCalories"></td></tr>
+        <tr><th>Carbs</th><td id="nutrCarbs"></td></tr>
+        <tr><th>Protein</th><td id="nutrProtein"></td></tr>
+        <tr><th>Fat</th><td id="nutrFat"></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ======================= Footer ======================= -->
+
+  <footer>
+  <div class="footer-social">
+    <a href="https://facebook.com" target="_blank"><img src="/assests/images/facebook.webp" alt="Facebook"></a>
+    <a href="https://instagram.com" target="_blank"><img src="/assests/images/instagram.webp" alt="Instagram"></a>
+    <a href="https://twitter.com" target="_blank"><img src="/assests/images/twitter.webp" alt="Twitter"></a>
+    <a href="https://tiktok.com" target="_blank"><img src="/assests/images/tiktok.webp" alt="Tiktok"></a>
+    <a href="https://youtube.com" target="_blank"><img src="/assests/images/youtube.webp" alt="Youtube"></a>
+    <a href="https://linkedin.com" target="_blank"><img src="/assests/images/linkedin.webp" alt="LinkedIn"></a>
+  </div>
+
+  <div class="footer-nav">
+    <p class="footer-text">&copy; 2025 GreenBite. Healthy lifestyle, one bite at a time.</p>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Healthy Recipes</a></li>
+      <li><a href="calculator.html">Nutrition Calculator</a></li>
+      <li><a href="workouts.html">Workouts</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/recipes.js"></script>
+</body>
+</html>

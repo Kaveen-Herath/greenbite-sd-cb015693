@@ -1,0 +1,965 @@
+/* Google Fonts */
+@font-face {
+    font-family: "AlanSans-Medium";
+    src: url(../assests/fonts/AlanSans-Medium.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: "AlanSans-Regular";
+    src: url(../assests/fonts/AlanSans-Regular.ttf) format('truetype');
+}
+
+.logo {
+  height: 65px;   /* adjust as needed */
+  width: auto;    /* maintain aspect ratio */
+  margin-left: 20px;
+}
+
+/* ====== BUTTON COMMON FOR ALL ====== */
+.common-btn {
+  font-family: "AlanSans-Regular";
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #16ac11;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.common-btn:hover {
+  background: #26d126;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+body {
+    font-family: 'AlanSans-Regular';
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f5f5f5;
+    color: #333;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+/* =============== Navbar ================ */
+header {
+    background: #ffffff67;
+    color: rgb(20, 182, 55);
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: top 0.4s ease-in-out;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.nav-links a {
+    color: rgb(20, 182, 55);
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-links a:hover {
+    color: #FF9800;
+    transform: scale(1.2); /* slightly larger */
+}
+
+/* Underline animation using ::after */
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0%;
+    background: #FF9800;
+    transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%; /* full underline on hover */
+}
+
+.nav-links a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Active page underline */
+.nav-links a.active {
+  
+  color: #FF9800;
+  transform: scale(1.2);   /* optional: same as hover */
+}
+.nav-links a.active::after {
+  width: 100%;             /* show underline */
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* =============== Main Content =============== */
+.content {
+    position: relative;
+    height: 80vh;
+    overflow: hidden;
+    margin-top: 0;
+}
+
+
+.content-slider {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 120%;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    max-height: 85%;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+
+/* =============== Footer =============== */
+footer {
+  backdrop-filter: blur(2px);
+  bottom: 0;         /* sticks to bottom */
+  left: 0;
+  width: 100%;       /* full width */
+  background: #ffffffc4;
+  color: rgb(20, 182, 55);
+  text-align: center;
+  padding: 10px;
+  z-index: 100;      /* ensures it stays on top */
+}
+
+.footer-social {
+  margin-top: 15px;
+}
+
+.footer-social a {
+  margin: 0 8px;
+}
+
+.footer-social img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.footer-social img:hover {
+  transform: scale(1.2);
+}
+
+.footer-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-nav ul li a {
+  text-decoration: none;
+  color: rgb(20, 182, 55);
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: #FF9800;
+}
+
+.footer-text {
+  margin-top: 5px;
+  margin-bottom: 0px;
+}
+
+footer form {
+  margin-top: 10px;
+}
+
+footer input {
+  padding: 8px;
+  border: #333;
+  border-radius: 4px;
+}
+
+#newsletter-email{
+  border: 2px solid rgb(20, 182, 55);
+}
+
+footer button {
+  padding: 8px 12px;
+  border: none;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.2s;
+}
+
+
+footer button:hover {
+  transform: scale(1.05);
+  background: #2e7d32;
+}
+
+/* =============== Responsive =============== */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #ffffff;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 20px;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .hamburger {
+    display: block;
+  }
+}
+
+/* ======================================= HEALTHY RECIPES - STYLING ======================================= */
+
+.recipe-main{
+  background-color: rgba(82, 82, 82, 0.089);
+  border-radius: 40px;
+  margin: 40px;
+  padding-bottom: 40px;
+  box-shadow: 0 8px 12px 8px rgba(0,0,0,0.1);
+}
+
+.recipes-section {
+  padding: 10px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.recipes-section h1 {
+  color: #18b139;
+  text-align: center;
+  font-family: 'AlanSans-Medium';
+  margin-bottom: 20px;
+}
+
+/* Filters */
+.filters {
+  text-align: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.filters input, .filters select {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Recipe Cards */
+.recipes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 8px 12px 8px rgba(0, 0, 0, 0.336);
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.recipe-card h3 {
+  margin: 10px;
+  font-family: 'AlanSans-Medium';
+}
+
+.recipe-card p {
+  margin: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Modal */
+.recipemodal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  overflow-y: auto;
+  padding: 15px;
+}
+.recipemodal-content {
+  background: white;
+  margin: auto;
+  max-width: 700px;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+}
+.recipemodal-content img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.recipemodal-content h3 {
+  margin-top: 0;
+}
+.recipemodal-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.recipemodal-content table, th, td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+.recipemodal-content th {
+  background: #4CAF50;
+  color: white;
+}
+.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+@media (min-width: 992px) {
+  .recipes-container {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns on large screens */
+  }
+}
+
+.recipe-video {
+  position: fixed;       /* keeps it in place while scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw;          /* always 100% of viewport width */
+  height: 100vh;         /* always 100% of viewport height */
+  object-fit: cover;     /* covers screen without stretching */
+  z-index: -1;
+  opacity: 0.3;
+  overflow: hidden;      /* prevents any overflow */
+}
+
+/* ======================================= WORKOUT GENERATOR - STYLING ======================================= */
+
+.workout-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+  padding-bottom: 70px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-row div {
+  flex: 1;
+}
+
+.generator-box, .result-box {
+  backdrop-filter: blur(3px);
+  background: rgba(255, 255, 255, 0.753);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 15px 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.generator-box h2{
+  color: #18b139;
+}
+
+.work-label {
+  display: block;
+  margin-top: 10px; 
+  font-weight: bold;
+}
+
+.work-select, .btn {
+  font-family: "AlanSans-Regular";
+  border-radius: 10px;
+  background-color: #c9c9c9b7;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: none;
+  font-family: "AlanSans-Regular";
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+}
+
+.btn {
+  background: #17b112;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  background: #33c92e;
+}
+
+/* Hide elements */
+.hidden {
+  display: none;
+}
+
+/* Modal styling */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 300px;
+  animation: pop 0.3s ease-in-out;
+}
+
+@keyframes pop {
+  from { transform: scale(0.7); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+#timer {
+  font-size: 3rem;
+  color: #d32f2f;
+  margin: 20px 0;
+}
+
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.exercise-card {
+  background: #e8f5e9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.exercise-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.exercise-card h4 {
+  margin: 0;
+  color: #2e7d32;
+}
+
+.exercise-card p {
+  margin-top: 8px;
+  font-weight: bold;
+  color: #555;
+}
+
+.workout-video {
+  position: fixed;       /* keeps it in place while scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw;          /* always 100% of viewport width */
+  height: 100vh;         /* always 100% of viewport height */
+  object-fit: cover;     /* covers screen without stretching */
+  z-index: -1;
+  opacity: 0.2;
+  overflow: hidden;      /* prevents any overflow */
+}
+
+/* ======================================= MINDFULNESS - STYLING ======================================= */
+
+
+.mindfulness-gallery {
+  background: rgba(255, 255, 255, 0.514);
+  width: 90%;
+  padding: 10px 0px 30px;
+  border-radius: 30px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.377);
+  text-align: center;
+  backdrop-filter: blur(3px);
+  text-align: center;
+  margin: 30px auto;
+}
+
+.mindfulness-gallery h1 {
+  color: rgb(73, 73, 73);
+  margin-bottom: 40px;
+}
+
+.mindfulness-gallery p {
+  font-size: 18px;
+  margin-top: 50px;
+  font-style: italic;
+  padding: 0px 70px;
+}
+
+.mindfulness-videos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.mindvid {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;       /* makes video fill nicely */
+  border-radius: 50%;      /* makes it circular */
+  box-shadow: 4px 8px 14px rgba(0, 0, 0, 0.678);
+  transition: transform 0.3s ease;
+}
+
+.vidmain{
+  width: 250px;
+  height: 250px;
+  object-fit: cover;       /* makes video fill nicely */
+  border-radius: 50%;      /* makes it circular */
+  box-shadow: 4px 8px 14px rgba(0, 0, 0, 0.678);
+  transition: transform 0.3s ease;
+}
+
+.mindfulness-videos video:hover {
+  transform: scale(1.2);
+}
+
+.mindfulness-videos img:hover {
+  transform: scale(1.2);
+}
+
+
+.mind-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+#mind-session-minutes{
+  font-size: 14px;
+  font-family: "AlanSans-Regular";
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.mind-breathing-section,
+.mind-timer-section,
+.mind-sound-section {
+  
+  background: rgba(255, 255, 255, 0.514);
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  margin: 15px 0;
+  border-radius: 10px;
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.377);
+  text-align: center;
+  backdrop-filter: blur(3px);
+}
+
+.mind-breathing-section h2{
+  color: #3d3d3d;
+}
+
+/* Breathing Circle */
+.mind-breath-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #67c21d;
+  margin: 20px auto;
+  transition: all 4s ease-in-out;
+}
+
+/* Timer Display */
+#mind-timer-display {
+  font-size: 2rem;
+  margin: 15px 0;
+}
+
+/* Buttons */
+
+.mind-btn, .mind-sound-btn {
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #16ac11;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mind-btn:hover, .mind-sound-btn:hover {
+  background: #49ce45;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.stopsound{
+  margin: 10px;
+  padding: 10px 15px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background: #16ac11;
+  color: white;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stopsound:hover {
+  background: #49ce45;
+  transform: scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.mind-video {
+  position: fixed;       /* keeps it in place while scrolling */
+  top: 0;
+  left: 0;
+  width: 100vw;          /* always 100% of viewport width */
+  height: 100vh;         /* always 100% of viewport height */
+  object-fit: cover;     /* covers screen without stretching */
+  z-index: -1;
+  opacity: 0.7;
+  overflow: hidden;      /* prevents any overflow */
+}
+
+
+/* ======================================= CONTACT US - STYLING ======================================= */
+
+.contact-main{
+  align-content: center;
+  background-color: rgba(224, 224, 224, 0.411);
+  border-radius: 40px;
+  padding: 50px;
+  margin: 20px;
+  padding-bottom: 40px;
+  box-shadow: 0 8px 12px 8px rgba(0, 0, 0, 0.1);
+}
+
+.map-container{
+  background-color: rgba(224, 224, 224, 0.411);
+  border-radius: 40px;
+  padding: 50px;
+  width: 90%;
+  margin: 0 auto;
+  padding-bottom: 40px;
+  box-shadow: 0 8px 12px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Page Styles */
+.contact-container {
+  max-width: 80%;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.contact-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contact-form label {
+  display: block;
+  margin: 10px 0 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background: green;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-confirm {
+  display: none;
+  margin: 15px 0;
+  color: green;
+  font-weight: bold;
+}
+
+/* Map Section */
+.contact-map {
+  margin: 30px 0;
+  text-align: center;
+}
+.contact-map iframe {
+  width: 100%;
+  height: 300px;
+  border: none;
+}
+
+/* FAQ Accordion */
+.contact-faq {
+  margin-top: 40px;
+}
+.contact-faq h3 {
+  margin-bottom: 15px;
+}
+.contact-faq-item {
+  border-radius: 30px;
+  margin-bottom: 10px;
+}
+.contact-faq-question {
+  border-radius: 10px;
+  padding: 10px;
+  background: #f4f4f4;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.13);
+}
+
+.contact-faq-question:hover{
+  transform: scale(1.02);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.contact-faq-answer {
+  background-color: #65ee6c56;
+  border-radius: 10px;
+  display: none;
+  padding: 10px;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+#contactName{
+  font-size: 14px;
+  font-family: "AlanSans-Regular";
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#contactEmail{
+  font-size: 14px;
+  font-family: "AlanSans-Regular";
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#contactMessage{
+  font-size: 14px;
+  font-family: "AlanSans-Regular";
+  border-radius: 10px;
+  padding: 10px;
+}
+
+
+/* ======================================= CALCULATOR - STYLING ======================================= */
+
+.calc {
+  display: flex;
+  justify-content: center;  /* centers horizontally */
+  align-items: flex-start;  /* align to the top */
+  gap: 40px;                /* space between form and results */
+  flex-wrap: wrap;          /* make it responsive */
+  margin: 30px auto;
+
+}
+
+.kcals{
+  background-color: rgb(248, 248, 248);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  padding: 1px 20px;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.calc-container {
+  flex: 0 0 500px;
+  min-height: 500px; 
+  max-width: 900px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.calc-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #14b637;
+}
+
+.calc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  
+}
+
+.calc-form label {
+  font-weight: bold;
+}
+
+.calc-form input, .calc-form select, .calc-form button {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#calc-results {
+  margin-top: 20px;
+}
+
+#calc-results h1 {
+  text-align: center;
+  color: #333;
+}
+
+#calc-gender{
+  font-family: "AlanSans-Regular";
+  font-size: 15px;
+}
+
+#calc-activity{
+  font-family: "AlanSans-Regular";
+  font-size: 15px;
+}
+
+
+.macro {
+  margin: 15px 0;
+}
+
+.bar {
+  height: 30px;
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.384);
+}
+
+.bar div {
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+  width: 0;                  /* start empty */
+  transition: width 2s ease; /* smooth animation */
+}
+
+.hidden {
+  display: none;
+  
+}
+
+
+#calc-placeholder-video {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.582);
+  width: 100%;
+  border-radius: 10px;
+  opacity: 0.7;
+}
+
+#bar-carbs { background: #4caf50; }
+#bar-fat { background: #ff9800; }
+#bar-protein { background: #2196f3; }
+

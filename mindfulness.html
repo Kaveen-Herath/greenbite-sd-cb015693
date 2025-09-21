@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assests/images/favicon.ico" type="image/x-icon">
+  <title>GreenBite</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+
+</head>
+<body>
+
+<!-- ======================= Navbar ======================= -->
+
+  <header id="main-header">
+    <nav class="navbar">
+      <img src="/assests/images/logo.webp" alt="GreenBite Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Healthy Recipes</a></li>
+        <li><a href="calculator.html">Nutrition Calculator</a></li>
+        <li><a href="workouts.html">Workouts</a></li>
+        <li><a href="mindfulness.html" class="active">Mindfulness</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- ======================= Main Content ======================= -->
+
+  <video autoplay loop muted class="mind-video">
+      <source src="/assests/videos/mindfull.mp4" type="video/mp4">
+  </video>
+
+
+<div class="mindfulness-gallery">
+  <h1>Pause. Breathe. Be Present.</h1>
+  <div class="mindfulness-videos">
+    <img src="/assests/images/mindfull4.webp" alt="Mindfullness Image" class="mindvid">
+    <video src="/assests/videos/mindfull2.mp4" autoplay muted loop class="mindvid"></video>
+    <video src="/assests/videos/mindfull1.mp4" autoplay muted loop class="vidmain"></video>
+    <video src="/assests/videos/mindfull3.mp4" autoplay muted loop class="mindvid"></video>
+    <img src="/assests/images/mindfull5.webp" alt="Mindfullness Image" class="mindvid">
+  </div>
+    <p>"Mindfulness is about reconnecting with the present moment, 
+    creating a sense of calm and clarity in our busy lives. By focusing on our breath, 
+    thoughts, and surroundings without judgment, we can reduce stress, 
+    improve concentration, and nurture emotional well-being. Practicing mindfulness 
+    daily helps us build resilience, enhance self-awareness, and find peace in even the 
+    smallest moments."</p>
+</div>
+
+
+  <main class="mind-container">
+    <!-- Breathing Animation -->
+    <section class="mind-breathing-section">
+      <h2>Guided Breathing</h2>
+      <div class="mind-breath-circle" id="mind-breath-circle"></div>
+      <p id="mind-breath-text">Inhale</p>
+    </section>
+
+    <!-- Meditation Timer -->
+    <section class="mind-timer-section">
+      <h2>Meditation Timer</h2>
+      <input type="number" id="mind-session-minutes" placeholder="Enter minutes" min="1">
+      <button id="mind-start-timer-btn" class="common-btn">Start Session</button>
+      <button id="mind-stop-timer-btn" class="common-btn">Stop Session</button>
+      <p id="mind-timer-display">00:00</p>
+      <p id="mind-session-completed"></p>
+      <button class="mind-sound-btn" data-sound="forest">Toogle Ambient Sound</button>
+      <button id="mind-stop-sound-btn" class="stopsound">Stop Sound </button>
+
+    </section>
+
+  </main>
+
+  <audio id="mind-audio-player" src="/assests/audio/environmental.mp3"></audio>
+
+
+  <!-- ======================= Footer ======================= -->
+
+  <footer>
+  <div class="footer-social">
+    <a href="https://facebook.com" target="_blank"><img src="/assests/images/facebook.webp" alt="Facebook"></a>
+    <a href="https://instagram.com" target="_blank"><img src="/assests/images/instagram.webp" alt="Instagram"></a>
+    <a href="https://twitter.com" target="_blank"><img src="/assests/images/twitter.webp" alt="Twitter"></a>
+    <a href="https://tiktok.com" target="_blank"><img src="/assests/images/tiktok.webp" alt="Tiktok"></a>
+    <a href="https://youtube.com" target="_blank"><img src="/assests/images/youtube.webp" alt="Youtube"></a>
+    <a href="https://linkedin.com" target="_blank"><img src="/assests/images/linkedin.webp" alt="LinkedIn"></a>
+  </div>
+
+  <div class="footer-nav">
+    <p class="footer-text">&copy; 2025 GreenBite. Healthy lifestyle, one bite at a time.</p>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Healthy Recipes</a></li>
+      <li><a href="calculator.html">Nutrition Calculator</a></li>
+      <li><a href="workouts.html">Workouts</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/mindfulness.js"></script>
+</body>
+</html>

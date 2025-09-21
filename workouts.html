@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/assests/images/favicon.ico" type="image/x-icon">
+  <title>GreenBite</title>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#4CAF50">
+
+</head>
+<body>
+
+<!-- ======================= Navbar ======================= -->
+
+  <header id="main-header">
+    <nav class="navbar">
+      <img src="/assests/images/logo.webp" alt="GreenBite Logo" class="logo">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="recipes.html">Healthy Recipes</a></li>
+        <li><a href="calculator.html">Nutrition Calculator</a></li>
+        <li><a href="workouts.html" class="active">Workouts</a></li>
+        <li><a href="mindfulness.html">Mindfulness</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">&#9776;</div>
+    </nav>
+  </header>
+
+  <!-- ======================= Main Content ======================= -->
+
+  <video autoplay loop muted playsinline class="workout-video">
+      <source src="/assests/videos/workoutbg.mp4" type="video/mp4">
+  </video>
+
+ <main class="workout-container">
+    <!-- Generator Form -->
+    <section class="generator-box">
+      <h2>Generate Your Workout</h2>
+      <form id="workout-form">
+            <div class="form-row">
+                <div>
+                <label for="body-part" class="work-label">Choose Body Part:</label>
+                <select id="body-part" class="work-select">
+                    <option value="arms">Arms</option>
+                    <option value="legs">Legs</option>
+                    <option value="full">Full Body</option>
+                </select>
+                </div>
+
+                <div>
+                <label for="equipment" class="work-label">Choose Equipment:</label>
+                <select id="equipment" class="work-select">
+                    <option value="none">None</option>
+                    <option value="dumbbells">Dumbbells</option>
+                    <option value="resistance">Resistance Bands</option>
+                    <option value="kettlebell">Kettle Bell</option>
+                </select>
+                </div>
+            </div>
+
+            <button type="submit" class="common-btn">Generate Workout</button>
+        </form>
+    </section>
+
+    <!-- Workout Result -->
+    <section class="result-box" id="workout-result">
+      <h4>No workout generated yet.</h4>
+    </section>
+
+    <!-- Start Workout Button -->
+    <button id="start-btn" class="btn hidden">Start Workout</button>
+</main>
+
+  <!-- Timer Modal -->
+  <div id="timerModal" class="modal">
+    <div class="modal-content">
+      <h3 id="exercise-name">Exercie Name</h3>
+      <p id="timer">30</p>
+      <button id="closeModal" class="btn">Close</button>
+    </div>
+  </div>
+
+
+  <!-- ======================= Footer ======================= -->
+
+  <footer>
+  <div class="footer-social">
+    <a href="https://facebook.com" target="_blank"><img src="/assests/images/facebook.webp" alt="Facebook"></a>
+    <a href="https://instagram.com" target="_blank"><img src="/assests/images/instagram.webp" alt="Instagram"></a>
+    <a href="https://twitter.com" target="_blank"><img src="/assests/images/twitter.webp" alt="Twitter"></a>
+    <a href="https://tiktok.com" target="_blank"><img src="/assests/images/tiktok.webp" alt="Tiktok"></a>
+    <a href="https://youtube.com" target="_blank"><img src="/assests/images/youtube.webp" alt="Youtube"></a>
+    <a href="https://linkedin.com" target="_blank"><img src="/assests/images/linkedin.webp" alt="LinkedIn"></a>
+  </div>
+
+  <div class="footer-nav">
+    <p class="footer-text">&copy; 2025 GreenBite. Healthy lifestyle, one bite at a time.</p>
+    
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Healthy Recipes</a></li>
+      <li><a href="calculator.html">Nutrition Calculator</a></li>
+      <li><a href="workouts.html">Workouts</a></li>
+      <li><a href="mindfulness.html">Mindfulness</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+  <script src="/js/main.js"></script>
+  <script src="/js/workouts.js"></script>
+</body>
+</html>
