@@ -1,7 +1,3 @@
-// ===============================
-// 1️⃣ Breathing Animation
-// ===============================
-
 // Get the circle element that will expand/contract
 var mindCircle = document.getElementById("mind-breath-circle");
 
@@ -38,9 +34,6 @@ function breathingCycle() {
   }
 }
 
-// ===============================
-// 2️⃣ Meditation Timer
-// ===============================
 
 // Get the start button element
 var startBtn = document.getElementById("mind-start-timer-btn");
@@ -101,10 +94,6 @@ stopBtn.addEventListener("click", function () {
   mindText.innerText = "Stopped"; // show stopped
 });
 
-
-// ===============================
-// 3️⃣ Ambient Sounds
-// ===============================
 
 // Get the audio element used to play sounds
 var audioPlayer = document.getElementById("mind-audio-player");

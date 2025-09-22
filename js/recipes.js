@@ -1,4 +1,3 @@
-// Sample recipe data stored in JS object
 const recipes = [
   {
     id: 1,
@@ -91,12 +90,11 @@ const recipes = [
   }
 ];
 
-// ===============================
-// 1️⃣ Populate Category Filter
-// ===============================
+
+// Category Filter
+
 var categoryFilter = document.getElementById("categoryFilter");
 
-// First, collect unique categories manually
 var categories = ["All"];
 for (var i = 0; i < recipes.length; i++) {
   var cat = recipes[i].category;
@@ -105,7 +103,7 @@ for (var i = 0; i < recipes.length; i++) {
   }
 }
 
-// Now create option elements for each category
+// To create option elements for each category
 for (var j = 0; j < categories.length; j++) {
   var option = document.createElement("option");
   option.value = categories[j];
@@ -114,9 +112,8 @@ for (var j = 0; j < categories.length; j++) {
 }
 
 
-// ===============================
-// 2️⃣ Render Recipe Cards
-// ===============================
+// Render Recipe Cards
+
 var recipesContainer = document.getElementById("recipesContainer");
 
 function renderRecipes(filterCategory, searchTerm) {
@@ -161,7 +158,7 @@ function renderRecipes(filterCategory, searchTerm) {
     var p = document.createElement("p");
     p.textContent = r.shortDesc;
 
-    // Add to card
+    // Adding to card
     card.appendChild(img);
     card.appendChild(h3);
     card.appendChild(p);
@@ -179,9 +176,7 @@ function renderRecipes(filterCategory, searchTerm) {
 }
 
 
-// ===============================
-// 3️⃣ Filter and Search Events
-// ===============================
+// Filter and Search Events
 var searchInput = document.getElementById("searchInput");
 
 categoryFilter.addEventListener("change", function() {
@@ -193,9 +188,7 @@ searchInput.addEventListener("input", function() {
 });
 
 
-// ===============================
-// 4️⃣ Modal Functionality
-// ===============================
+// Modal Functionality
 var modal = document.getElementById("recipeModal");
 var closeModalBtn = modal.querySelector(".close");
 
@@ -244,10 +237,6 @@ window.addEventListener("click", function(e) {
   }
 });
 
-
-// ===============================
-// 5️⃣ Initial Render
-// ===============================
 renderRecipes();
 
 

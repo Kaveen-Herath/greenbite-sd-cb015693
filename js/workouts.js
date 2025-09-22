@@ -1,6 +1,4 @@
-// ===============================
 // Workout data
-// ===============================
 const workoutData = {
   arms: {
     none: ["Push-ups", "Arm Circles"],
@@ -24,9 +22,8 @@ const workoutData = {
   }
 };
 
-// ===============================
+
 // DOM Elements
-// ===============================
 const form = document.getElementById("workout-form");
 const result = document.getElementById("workout-result");
 const startBtn = document.getElementById("start-btn");
@@ -38,9 +35,8 @@ const exerciseName = document.getElementById("exercise-name");
 
 let currentWorkout = [];
 
-// ===============================
 // Generate workout
-// ===============================
+
 form.addEventListener("submit", function(e) {
   e.preventDefault(); // prevent form from reloading page
 
@@ -66,9 +62,9 @@ form.addEventListener("submit", function(e) {
     startBtn.classList.remove("hidden");
 });
 
-// ===============================
+
 // Start Workout Button
-// ===============================
+
 startBtn.addEventListener("click", function() {
   modal.style.display = "flex"; // show modal
   startWorkoutSequence();        // start timer sequence
@@ -78,9 +74,9 @@ closeModal.addEventListener("click", function() {
   modal.style.display = "none";  // close modal
 });
 
-// ===============================
+
 // Timer Sequence
-// ===============================
+
 function startWorkoutSequence() {
   let index = 0;
 

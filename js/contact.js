@@ -1,6 +1,3 @@
-// ===========================
-// Contact Form Logic
-// ===========================
 var form = document.getElementById("contactForm");
 var confirmMsg = document.getElementById("contactConfirm");
 
@@ -29,9 +26,6 @@ form.addEventListener("submit", function(e) {
   form.reset();
 });
 
-// ===========================
-// FAQ Accordion Logic
-// ===========================
 var faqQuestions = document.querySelectorAll(".contact-faq-question");
 
 faqQuestions.forEach(function(q) {
