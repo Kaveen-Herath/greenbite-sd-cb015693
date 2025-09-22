@@ -1,7 +1,7 @@
 {
   "name": "GreenBite",
   "short_name": "GreenBite",
-  "description": "HI changed",
+  "description": "HI changed again",
   "start_url": "index.html",
   "display": "standalone",
   "background_color": "#ffffff",
